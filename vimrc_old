@@ -1,0 +1,56 @@
+" ------------------ settings --------------------
+filetype indent plugin on
+syntax on
+set nocompatible
+set number
+set autoindent
+set smartindent
+set noswapfile
+set cursorline
+set expandtab
+set smarttab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set hlsearch
+set showmatch
+set wildmenu
+set t_Co=256
+
+" ---------------- plugins --------------------
+call plug#begin('~/.vim/plugged')
+Plug 'habamax/vim-gruvbit'
+Plug 'morhetz/gruvbox'
+Plug 'preservim/nerdtree'
+Plug 'davidhalter/jedi-vim'
+Plug 'jiangmiao/auto-pairs'
+" Plug 'Valloric/YouCompleteMe'
+call plug#end()
+
+" ----------------- set colorscheme --------------
+"func! s:gruvbit_setup() abort
+"    hi Comment gui=italic cterm=italic
+"    hi Statement gui=bold cterm=bold
+"endfunc
+"
+"augroup colorscheme_change | au!
+"    au colorscheme gruvbit call s:gruvbit_setup()
+"augroup END
+
+set termguicolors
+set background=dark
+colorscheme gruvbox
+
+" ------------------ mapppings ------------------
+let mapleader = " "
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+
+" ------------------ python autocompletion settings ------------
+let g:jedi#auto_initialization = 1
+let g:jedi#auto_vim_configuration = 1
+let g:jedi#use_tabs_not_buffers = 1
