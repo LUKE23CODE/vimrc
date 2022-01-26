@@ -1,4 +1,4 @@
-# vimrc
+# VIMRC
 
 ## How to install my vimrc file?
 
