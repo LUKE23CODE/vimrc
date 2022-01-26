@@ -18,3 +18,10 @@
 6. seoul256 -> this is also a theme
 7. coc.nvim -> this is to provide full language server protocol on vim and neovim.
 8. vim-commentary -> this is used to comment and uncomment code with gcc & gc.
+
+## Keybindings
+
+1. the leader key is <SPACE>
+2. To toggle nerdtree on and off use <F2> key
+3. To open integrated terminal press <C-t> -> ctrl-t
+4. To rename something press <SPACE>rn
