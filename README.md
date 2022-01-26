@@ -12,16 +12,9 @@
 
 1. polyglot -> a language pack for Vim that provides syntax highlighting and indentation for lots and lots of programming languages.
 2. gruvbox -> this is the theme that i am using for syntax highlighting
-3. auto-pairs -> Insert or delete brackets, parens, quotes in pair.
+3. auto-pairs -> Insert or delete brackets, parenteses, quotes in pair.
 4. nerdtree -> this give you a file browser on the left of the window.
-5. ropevim -> this a vim mode that uses rope library to provide features like python refactorings and code-assists.
-6. jedi-vim -> a VIM binding to the autocompletion library Jedi.
-7. ultisnips -> this is the ultimate solution for snippets in Vim.
-8. vim-snippets -> this gives you snippets like the if statement and many others
-9. vim-fuggitive -> this is a Git wrapper.
-10. ale -> this providing linting (syntax checking and semantic errors) in NeoVim 0.2. 0+ and Vim 8 while you edit your text files, and acts as a Vim Language Server Protocol client.
-11. vim-gutentags -> takes care of the much needed management of tags files in Vim.
-12. fzf & fzf.vim -> To search for files inside Vim using FZF.vim plugin.
-13. vim-airline & vim-airlines-themes -> Lean & mean status/tabline for vim that's light as air.
-14. vim-gitgutter -> which shows a git diff in the sign column.
-15. tagbar -> provides an easy way to browse the tags of the current file and get an overview of its structure.
+5. jedi-vim -> a VIM binding to the autocompletion library Jedi.
+6. seoul256 -> this is also a theme
+7. coc.nvim -> this is to provide full language server protocol on vim and neovim.
+8. vim-commentary -> this is used to comment and uncomment code with gcc & gc.
