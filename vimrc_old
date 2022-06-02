@@ -1,56 +1,74 @@
 " ------------------ settings --------------------
-filetype indent plugin on
-syntax on
+set number " Show absolute line numbers on the left.
+filetype indent plugin on " Auto-detect un-labeled filetypes
+syntax on " Turn syntax highlighting on
+set ai " Sets auto-indentation
+set si " Sets smart-indentation
+set noswapfile " Prevent vim from creating .swp file
+set nobackup
+set cursorline " Highlight current cursor line
+set smarttab " Be smart when using tabs
+set showmatch " Show matching brackets when text indicator is over them
 set nocompatible
-set number
-set autoindent
-set smartindent
-set noswapfile
-set cursorline
-set expandtab
-set smarttab
+set encoding=UTF-8
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set hlsearch
-set showmatch
-set wildmenu
+set expandtab
+set completeopt = preview
 set t_Co=256
+set termguicolors
+set bg=dark
+colorscheme gruvbox
 
 " ---------------- plugins --------------------
 call plug#begin('~/.vim/plugged')
-Plug 'habamax/vim-gruvbit'
 Plug 'morhetz/gruvbox'
-Plug 'preservim/nerdtree'
-Plug 'davidhalter/jedi-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'} 
 Plug 'jiangmiao/auto-pairs'
-" Plug 'Valloric/YouCompleteMe'
+Plug 'ryanoasis/vim-devicons'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
+Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'mhinz/vim-startify'
+Plug 'lilydjwg/colorizer
+Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
-" ----------------- set colorscheme --------------
-"func! s:gruvbit_setup() abort
-"    hi Comment gui=italic cterm=italic
-"    hi Statement gui=bold cterm=bold
-"endfunc
-"
-"augroup colorscheme_change | au!
-"    au colorscheme gruvbit call s:gruvbit_setup()
-"augroup END
-
-set termguicolors
-set background=dark
-colorscheme gruvbox
-
 " ------------------ mapppings ------------------
-let mapleader = " "
-
+Let mapleader = " " 
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
-" ------------------ python autocompletion settings ------------
-let g:jedi#auto_initialization = 1
-let g:jedi#auto_vim_configuration = 1
-let g:jedi#use_tabs_not_buffers = 1
+let g:airline#extensions#tabline#enabled = 1
+
+let g:airline_theme='base16_gruvbox_dark_hard'
